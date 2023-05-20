@@ -2,16 +2,19 @@ package com.example.ashleyncoursescheduler.UI;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ashleyncoursescheduler.R;
 
-public class TermDetail extends AppCompatActivity {
+public class TermList extends AppCompatActivity {
+
     @Override
-    protected  void onCreate(Bundle savedInstanceState){
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_term_view);
-        RecyclerView recyclerView = findViewById(R.id.termRecView);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
 }
+
