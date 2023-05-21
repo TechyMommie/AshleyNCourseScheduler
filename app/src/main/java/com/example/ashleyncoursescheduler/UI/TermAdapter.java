@@ -16,9 +16,10 @@ import com.example.ashleyncoursescheduler.R;
 
 import java.util.List;
 
-public class TermAdapter /*extends RecyclerView.Adapter<TermAdapter.TermViewHolder>*/ {
+public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder> {
     class TermViewHolder extends RecyclerView.ViewHolder{
        private final TextView termItemView;
+       //Constructor
         private TermViewHolder(View itemView){
             super(itemView);
             termItemView = itemView.findViewById(R.id.textView);
@@ -49,13 +50,24 @@ public class TermAdapter /*extends RecyclerView.Adapter<TermAdapter.TermViewHold
     @NonNull
     @Override
     public TermAdapter.TermViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View itemView = mInflater.inflate(R.layout.fragment_term_list_item,parent, false);
+        return new TermViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TermAdapter.TermViewHolder holder, int position) {
-
+        if(mTerms != null){
+            Terms current = mTerms.get(position);
+            String title = current.getTitle();
+            holder.termItemView.setText(title);
+        }
+        else
+            holder.termItemView.setText("No term title available.");
     }
+public void setTerms(List<Terms> terms){
+        mTerms = terms;
+        notifyDataSetChanged();
+}
 
     @Override
     public int getItemCount() {
@@ -65,6 +77,5 @@ public class TermAdapter /*extends RecyclerView.Adapter<TermAdapter.TermViewHold
         else
             return 0;
     }
-
 
 }

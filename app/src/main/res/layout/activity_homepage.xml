@@ -10,164 +10,79 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Term:"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtCourse"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintVertical_bias="0.07" />
 
-    <Spinner
-        android:id="@+id/spinTerm"
-        android:layout_width="266dp"
-        android:layout_height="51dp"
-        android:contentDescription="Select a term."
-        app:layout_constraintBottom_toTopOf="@+id/txtCourse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTerm"
-        app:layout_constraintVertical_bias="0.19" />
-
-    <TextView
-        android:id="@+id/txtCourse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Courses:"
-        android:textSize="20sp"
+    <ImageButton
+        android:id="@+id/btnAssessmentView"
+        android:layout_width="245dp"
+        android:layout_height="147dp"
+        android:contentDescription="Click to view assessments."
+        android:contextClickable="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
-
-    <Spinner
-        android:id="@+id/spinCourse"
-        android:layout_width="266dp"
-        android:layout_height="51dp"
-        android:contentDescription="Select a course"
-        app:layout_constraintBottom_toTopOf="@+id/txtAssessment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCourse"
-        app:layout_constraintVertical_bias="0.102" />
-
-    <ImageButton
-        android:id="@+id/btnTermsEditView"
-        android:layout_width="63dp"
-        android:layout_height="52dp"
-        android:contentDescription="Click to edit your terms."
-        android:contextClickable="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/txtCourse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/btnTermView"
-        app:layout_constraintTop_toBottomOf="@+id/spinTerm"
-        app:layout_constraintVertical_bias="0.764"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
-
-    <ImageButton
-        android:id="@+id/btnTermView"
-        android:layout_width="71dp"
-        android:layout_height="48dp"
-        android:contentDescription="Click to view your terms."
-        android:contextClickable="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/txtCourse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinTerm"
-        app:layout_constraintVertical_bias="0.709"
-        app:srcCompat="@drawable/_0" />
+        app:layout_constraintVertical_bias="0.973"
+        app:srcCompat="@drawable/_03" />
 
     <TextView
         android:id="@+id/txtAssessment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Assessments:"
-        android:textSize="20sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
-
-    <Spinner
-        android:id="@+id/spinAssessment"
-        android:layout_width="266dp"
-        android:layout_height="51dp"
-        android:contentDescription="Select an assessment."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAssessment"
-        app:layout_constraintVertical_bias="0.033" />
-
-    <ImageButton
-        android:id="@+id/btnCourseEditView"
-        android:layout_width="61dp"
-        android:layout_height="51dp"
-        android:contentDescription="Click to edit courses."
-        android:contextClickable="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/txtAssessment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.717"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinCourse"
-        app:layout_constraintVertical_bias="0.588"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:layout_constraintVertical_bias="0.741" />
 
     <ImageButton
         android:id="@+id/btnCourseView"
-        android:layout_width="63dp"
-        android:layout_height="56dp"
-        android:contentDescription="Click to view courses"
+        android:layout_width="245dp"
+        android:layout_height="147dp"
+        android:contentDescription="Click to view courses."
         android:contextClickable="true"
         android:scaleType="fitCenter"
         android:text="View Courses"
-        app:layout_constraintBottom_toTopOf="@+id/txtAssessment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinCourse"
-        app:layout_constraintVertical_bias="0.543"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588"
         app:srcCompat="@drawable/_02" />
 
-    <ImageButton
-        android:id="@+id/btnAssessmentEditView"
-        android:layout_width="59dp"
-        android:layout_height="57dp"
-        android:contentDescription="Click to edit assessments."
-        android:contextClickable="true"
-        android:scaleType="fitCenter"
+    <TextView
+        android:id="@+id/txtCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courses:"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinAssessment"
-        app:layout_constraintVertical_bias="0.078"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.411" />
 
     <ImageButton
-        android:id="@+id/btnAssessmentView"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:contentDescription="Click to view assessrnents"
+        android:id="@+id/btnTermView"
+        android:layout_width="245dp"
+        android:layout_height="147dp"
+        android:contentDescription="Click to view your terms."
         android:contextClickable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinAssessment"
-        app:layout_constraintVertical_bias="0.083"
-        app:srcCompat="@drawable/_03" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179"
+        app:srcCompat="@drawable/_0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

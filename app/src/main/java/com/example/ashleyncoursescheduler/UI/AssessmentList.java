@@ -1,4 +1,6 @@
 package com.example.ashleyncoursescheduler.UI;
 
-public class AssessmentList {
+import androidx.fragment.app.Fragment;
+
+public class AssessmentList extends Fragment {
 }
