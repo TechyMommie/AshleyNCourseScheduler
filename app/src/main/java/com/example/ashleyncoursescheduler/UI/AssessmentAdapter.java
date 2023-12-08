@@ -21,7 +21,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         //Constructor
         private AssessmentViewHolder(View itemView){
             super(itemView);
-            assessmentItemView = itemView.findViewById(R.id.textView);
+            assessmentItemView = itemView.findViewById(R.id.txtTerms);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -49,7 +49,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
     @Override
     public AssessmentAdapter.AssessmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.fragment_assessment_view, parent, false);
-        return null;
+        return new AssessmentViewHolder(itemView);
     }
 
     @Override
@@ -59,10 +59,14 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
             String title = current.getTitle();
             holder.assessmentItemView.setText(title);
         }
-            else
+        else
             holder.assessmentItemView.setText("No assessment title available.");
     }
 
+    public void setAssessments(List<Assessments> assessments){
+        mAssessments = assessments;
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         if(mAssessments != null){

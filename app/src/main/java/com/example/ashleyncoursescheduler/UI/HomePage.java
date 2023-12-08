@@ -1,46 +1,65 @@
 package com.example.ashleyncoursescheduler.UI;
 
-import static android.text.TextUtils.replace;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ashleyncoursescheduler.R;
 
 public class HomePage extends AppCompatActivity {
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getFragmentManager();
         setContentView(R.layout.activity_homepage);
+
         ImageButton termView = findViewById(R.id.btnTermView);
         ImageButton courseView = findViewById(R.id.btnCourseView);
         ImageButton assessView = findViewById(R.id.btnAssessmentView);
-//        supportFragmentManager().beginTransaction().apply {
-//            replace(R.id.frameLayoutTermView, termView)
-//        }
-        termView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivityFromFragment(new Fragment());
-            }
+
+        //Term View Click
+        termView.setOnClickListener(view -> {
+            TermAdapter termAdapter = new TermAdapter(this );
+
+            TermList termListFragment  = new TermList();
+            setContentView(R.layout.term_list_item);
+            RecyclerView recView = findViewById(R.id.termRecyclerView);
+            recView.setAdapter(termAdapter);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayoutTermView, termListFragment).commit();
         });
-        courseView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivityFromFragment(new Fragment());
-            }
+
+        //Course View Click
+        courseView.setOnClickListener(view -> {
+            CourseAdapter courseAdapter = new CourseAdapter(this);
+
+            CourseList courseListFragment  = new CourseList();
+            setContentView(R.layout.fragment_course_view);
+            //RecyclerView recView = findViewById(R.id.courseRecyclerView);
+            //recView.SetAapter(courseAdapter);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.cLCourseView, courseListFragment).commit();
         });
-        assessView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivityFromFragment(new Fragment());
-            }
+
+        //Assessment View Click
+        assessView.setOnClickListener(view -> {
+            AssessmentList assessmentListFragment  = new AssessmentList();
+            setContentView(R.layout.fragment_assessment_list_item);
+//            RecyclerView recView = findViewById(R.id.assessmentRecyclerView);
+//            recView.SetAapter(AssessmentAdapter);
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.clayoutAssessment, assessmentListFragment).commit();
         });
-        }
+    }
 
 }

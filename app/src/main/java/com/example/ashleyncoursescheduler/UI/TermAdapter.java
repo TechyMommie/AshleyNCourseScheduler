@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ashleyncoursescheduler.Entities.Courses;
 import com.example.ashleyncoursescheduler.Entities.Terms;
 import com.example.ashleyncoursescheduler.R;
 
@@ -18,17 +17,17 @@ import java.util.List;
 
 public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder> {
     class TermViewHolder extends RecyclerView.ViewHolder{
-       private final TextView termItemView;
-       //Constructor
+        private final TextView termItemView;
+        //Constructor
         private TermViewHolder(View itemView){
             super(itemView);
-            termItemView = itemView.findViewById(R.id.textView);
+            termItemView = itemView.findViewById(R.id.txtTerms);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     final Terms current = mTerms.get(position);
-                    Intent intent = new Intent(context, Courses.class);
+                    Intent intent = new Intent(context, Terms.class);
                     intent.putExtra("id", current.getTermId());
                     intent.putExtra("title", current.getTitle());
                     intent.putExtra("Start", current.getTermStart());
@@ -50,7 +49,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
     @NonNull
     @Override
     public TermAdapter.TermViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.fragment_term_list_item,parent, false);
+        View itemView = mInflater.inflate(R.layout.fragment_term_view,parent, false);
         return new TermViewHolder(itemView);
     }
 
@@ -64,10 +63,10 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         else
             holder.termItemView.setText("No term title available.");
     }
-public void setTerms(List<Terms> terms){
+    public void setTerms(List<Terms> terms){
         mTerms = terms;
-        notifyDataSetChanged();
-}
+        notifyDataSetChanged ();
+    }
 
     @Override
     public int getItemCount() {
