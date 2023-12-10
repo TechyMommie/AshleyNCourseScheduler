@@ -14,11 +14,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
-    <fragment
-        android:name="com.example.ashleyncoursescheduler.UI.TermList"
-        android:id="@+id/fragment_term_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/txtTerm"

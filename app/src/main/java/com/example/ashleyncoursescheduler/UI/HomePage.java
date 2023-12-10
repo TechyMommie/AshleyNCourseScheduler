@@ -2,6 +2,8 @@ package com.example.ashleyncoursescheduler.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -11,6 +13,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ashleyncoursescheduler.Database.Repository;
+import com.example.ashleyncoursescheduler.Entities.Terms;
 import com.example.ashleyncoursescheduler.R;
 
 public class HomePage extends AppCompatActivity {
@@ -60,6 +64,26 @@ public class HomePage extends AppCompatActivity {
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.clayoutAssessment, assessmentListFragment).commit();
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.menuItemTerms:
+                //Repository repo = new Repository(getApplication());
+                //Terms terms = new Terms();
+                return true;
+            case R.id.menuItemCourses:
+                return true;
+            case R.id.btnAssessmentView:
+        }
+       return true;
     }
 
 }

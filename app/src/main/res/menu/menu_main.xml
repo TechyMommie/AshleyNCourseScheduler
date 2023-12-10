@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
+    <item
+        android:id="@+id/menuItemTerms"
+        android:title="View Terms" />
+    <item
+        android:id="@+id/menuItemCourses"
+        android:title="View Courses" />
+    <item
+        android:id="@+id/menuItemAssessments"
+        android:title="View Assessments" />
 </menu>
